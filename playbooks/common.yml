@@ -25,7 +25,7 @@
         name: wireshark
         state: latest
 
-    - name: ensure wireshark is at the latest version
+    - name: ensure nginx is at the latest version
       apt:
         name: nginx
         state: latest
