@@ -30,8 +30,15 @@
         name: nginx
         state: latest
 
-    - name: Change file ownership, group and permissions
+    - name: Create directory if it doesn't exist
       ansible.builtin.file:
         path: /home/ubuntu/knowledge-gap
         state: directory
-        # mode: '0644'
+
+    - name: Create file
+      ansible.builtin.file:
+        path: /home/ubuntu/knowledge-gap/testing
+        state: file
+        mode: '0644'
+        owner: root
+        group: jenkins
