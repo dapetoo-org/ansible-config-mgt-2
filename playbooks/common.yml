@@ -1,6 +1,6 @@
 ---
 - name: Update web, nfs and db servers
-  hosts: webservers, nfs, db1
+  hosts: webservers, nfs, db
   remote_user: ec2-user
   become: true
   become_user: root
@@ -29,3 +29,9 @@
       apt:
         name: nginx
         state: latest
+
+    - name: Change file ownership, group and permissions
+      ansible.builtin.file:
+        path: /home/ubuntu/knowledge-gap
+        state: directory
+        # mode: '0644'
