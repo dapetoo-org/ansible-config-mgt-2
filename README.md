@@ -3,4 +3,4 @@
 
 update
 
-lets go
+save artifacts
